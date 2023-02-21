@@ -31,3 +31,8 @@ For this project, I created an application for restaurants to allows users to cr
 - [ ] Run `npm run test` to run tests on local app - data needs to be seeded with correct data before tests can pass.
 
 ## Images
+
+<img width="1186" alt="Screenshot 2023-02-21 at 11 23 23" src="https://user-images.githubusercontent.com/113220653/220419638-f80f8b83-9427-46a3-ad3f-e276d1fbd8b5.png">
+<img width="1191" alt="Screenshot 2023-02-21 at 11 23 33" src="https://user-images.githubusercontent.com/113220653/220419645-9ed1a04f-8c84-4422-8540-de58c1fafd3b.png">
+<img width="1190" alt="Screenshot 2023-02-21 at 11 35 33" src="https://user-images.githubusercontent.com/113220653/220419647-aa665e48-99d0-4d77-a1f3-6b3846f1fa02.png">
+<img width="1191" alt="Screenshot 2023-02-21 at 11 35 56" src="https://user-images.githubusercontent.com/113220653/220419648-e2d12057-7141-4ddb-91e2-968f1574bad8.png">
