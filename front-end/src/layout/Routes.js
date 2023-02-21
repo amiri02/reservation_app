@@ -129,6 +129,11 @@ function Routes() {
         />
       </Route>
 
+      <Route path="/dashboard">
+        <Dashboard />
+        </Route>
+
+
       <Route path="/search">
         <Search />
       </Route>
