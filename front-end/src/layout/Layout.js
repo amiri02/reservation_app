@@ -23,7 +23,7 @@ function Layout() {
         </div>
       <div className="">
         <div className="">
-          <Index />
+          <Routes />
         </div>
       </div>
     </div>
