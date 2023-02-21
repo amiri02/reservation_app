@@ -19,7 +19,7 @@ import CreateReservation from "../reservations/CreateReservation";
 
 
 /** defines all the routes for the application */
-function Index() {
+function Routes() {
   const [reservations, setReservations] = useState([]);
   const [tables, setTables] = useState([]);
   const [date, setDate] = useState("");
@@ -141,4 +141,4 @@ function Index() {
 }
 
 
-export default Index;
+export default Routes;

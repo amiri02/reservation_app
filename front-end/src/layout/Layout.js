@@ -1,5 +1,5 @@
 import React from "react";
-import Index from ".";
+import Routes from "./Routes";
 import Navbar from "./Navbar";
 
 /**
