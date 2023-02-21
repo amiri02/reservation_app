@@ -8,10 +8,14 @@ import {Link} from "react-router-dom"
 
 function Navbar() {
   return (
-    <div className="container">
+    <div className="container" >
+
       <nav className="navbar navbar-expand-lg navbar-light">
-        <div className="collapse navbar-collapse">
-          <ul className="nav navbar-nav justify-content-center bg-dark" style={{backgroundColor: "#FFB93A", fontFamily: "Courier", margin: "0 auto"}}>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="nav navbar-nav justify-content-center bg-dark ml-auto" style={{backgroundColor: "#FFB93A", fontFamily: "Courier", margin: "0 auto"}}>
             <li className="nav-item p-1">
               <button type="button" className="btn m-1" data-toggle="tooltip" data-placement="bottom" title="Home">
                 <Link className="nav-link text-white m-1" to="/">
@@ -55,8 +59,10 @@ function Navbar() {
           </ul>
         </div>
       </nav>
-    </div>
+      </div>
+      
   )
 }
 
 export default Navbar
+

@@ -37,10 +37,11 @@ function Index() {
     } else {
       if (location.pathname === "/dashboard")
         history.push(`/dashboard?date=${today()}`);
+        history.go(1)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+ 
   }, [query]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+ 
   useEffect(() => {
     function loadDashboard() {
       const abortController = new AbortController();
