@@ -37,7 +37,7 @@ function Routes() {
     } else {
       if (location.pathname === "/dashboard") {
         history.push(`/dashboard?date=${today()}`);
-        history.go(1);
+        history.go(0);
       }
     }
   }, [query]);
