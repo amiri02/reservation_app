@@ -35,11 +35,11 @@ function Routes() {
     if (query.get("date")) {
       setDate(query.get("date"));
     } else {
-      if (location.pathname === "/dashboard")
+      if (location.pathname === "/dashboard") {
         history.push(`/dashboard?date=${today()}`);
-        history.go(1)
+        history.go(1);
+      }
     }
- 
   }, [query]);
  
   useEffect(() => {
@@ -63,7 +63,7 @@ function Routes() {
     let result = window.confirm(
       "Do you want to cancel this reservation? \n \n This cannot be undone."
     );
-    if (result)
+    if (result) {
       changeReservationStatus(
         reservation_id,
         "cancelled",
@@ -71,6 +71,7 @@ function Routes() {
       )
         .then(() => window.location.reload())
         .catch(setReservationsError);
+    }
 
     return () => abortController.abort();
   }
@@ -86,7 +87,6 @@ function Routes() {
       <Route exact={true} path="/reservations">
         <Redirect to={`/dashboard`} />
       </Route>
-
      
       <Route path="/reservations/new">
         <CreateReservation 
@@ -95,7 +95,6 @@ function Routes() {
           setReservations={setReservations}
         />
       </Route>
-
    
       <Route path="/reservations/:reservation_id/edit">
         <EditReservation 
@@ -128,11 +127,6 @@ function Routes() {
           handleCancel={handleCancel}
         />
       </Route>
-
-      <Route path="/dashboard">
-        <Dashboard />
-        </Route>
-
 
       <Route path="/search">
         <Search />
