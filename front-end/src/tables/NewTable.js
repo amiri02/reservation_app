@@ -8,7 +8,7 @@ import { createTable } from "../utils/api";
 export default function NewTable({ loadDashboard }) {
   const history = useHistory();
 
-  const [error, setError] = useState([]);
+  const [error, setError] = useState(null);
   /** sets initial state of a table */
   const [formData, setFormData] = useState({
     table_name: "",
@@ -44,23 +44,24 @@ export default function NewTable({ loadDashboard }) {
 
   /* checks for table's capacity and length of table's name */
   function validateFields() {
-    let foundError = null;
-
     if (formData.table_name === "" || formData.capacity === "") {
-      foundError = {
+      setError({
         message:
           "invalid form: table name & capacity must be provided to create table",
-      };
+      });
+      return false;
     } else if (formData.table_name.length < 2) {
-      foundError = {
+      setError({
         message:
           "invalid table name: table name must contain at least two characters",
-      };
+      });
+      return false;
+    } else {
+      setError(null);
+      return true;
     }
-
-    setError(foundError);
-    return foundError === null;
   }
+  
 
 
   return (
@@ -70,7 +71,8 @@ export default function NewTable({ loadDashboard }) {
       </h2>
       <div className="d-flex justify-content-center mt-2">
         <form className="font-weight-bold w-75">
-        {(error.length > 0) ? <ErrorAlert error={error} />:null}
+          
+        {error && <ErrorAlert error={error} />}
 
           <label htmlFor="table_name">Table Name</label>
           <input
