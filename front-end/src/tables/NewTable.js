@@ -69,8 +69,8 @@ export default function NewTable({ loadDashboard }) {
         New Table
       </h2>
       <div className="d-flex justify-content-center mt-2">
+      {error.length > 0 && <ErrorAlert error={error} />}
         <form className="font-weight-bold w-75">
-        {error.length > 0 && <ErrorAlert error={error} />}
 
           <label htmlFor="table_name">Table Name</label>
           <input
