@@ -18,7 +18,7 @@ import EditReservation from "../reservations/EditReservation";
 import CreateReservation from "../reservations/CreateReservation";
 
 
-/** defines all the routes for the application */
+
 function Routes() {
   const [reservations, setReservations] = useState([]);
   const [tables, setTables] = useState([]);
@@ -35,12 +35,12 @@ function Routes() {
     if (query.get("date")) {
       setDate(query.get("date"));
     } else {
-      if (location.pathname === "/dashboard") {
+      if (location.pathname === "/dashboard")
         history.push(`/dashboard?date=${today()}`);
-      }
     }
+  
   }, [query]);
- 
+
   useEffect(() => {
     function loadDashboard() {
       const abortController = new AbortController();
@@ -62,7 +62,7 @@ function Routes() {
     let result = window.confirm(
       "Do you want to cancel this reservation? \n \n This cannot be undone."
     );
-    if (result) {
+    if (result)
       changeReservationStatus(
         reservation_id,
         "cancelled",
@@ -70,7 +70,6 @@ function Routes() {
       )
         .then(() => window.location.reload())
         .catch(setReservationsError);
-    }
 
     return () => abortController.abort();
   }
@@ -86,7 +85,6 @@ function Routes() {
       <Route exact={true} path="/reservations">
         <Redirect to={`/dashboard`} />
       </Route>
-     
       <Route path="/reservations/new">
         <CreateReservation 
           // loadDashboard={loadDashboard} 
@@ -94,7 +92,6 @@ function Routes() {
           setReservations={setReservations}
         />
       </Route>
-   
       <Route path="/reservations/:reservation_id/edit">
         <EditReservation 
           reservations={reservations}
